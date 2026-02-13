@@ -16,6 +16,8 @@ In this project, Jenkins is configured to:
 * Run Linux shell commands within Jenkins workspace
 * Create and manage files during pipeline execution
 * Display output logs in Jenkins Console
+* Testing Jenkins Auto Trigger
+
 
 This is a beginner-level CI/CD implementation built for learning DevOps automation concepts.
 
