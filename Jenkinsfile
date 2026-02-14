@@ -3,21 +3,21 @@ pipeline {
 
     stages {
 
-        stage('Create Folder') {
+        stage('Clean Workspace') {
             steps {
-                sh "mkdir -p devops"
+                deleteDir()
             }
         }
 
-        stage('Create File') {
+        stage('Clone Repo') {
             steps {
-                sh "echo 'Hello from Jenkinsfile CI/CD' > devops/info.txt"
+                git 'https://github.com/pranavnigade123/jenkins-project.git'
             }
         }
 
-        stage('Read File') {
+        stage('Deploy Website') {
             steps {
-                sh "cat devops/info.txt"
+                sh "cp index.html /var/www/html/"
             }
         }
 
