@@ -8,18 +8,6 @@ pipeline {
 
     stages {
 
-        stage('Clean Workspace') {
-            steps {
-                deleteDir()
-            }
-        }
-
-        stage('Clone Repo') {
-            steps {
-                git branch: 'main', url: 'https://github.com/pranavnigade123/jenkins-project.git'
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t mywebsite:v1 .'
